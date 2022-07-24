@@ -1,4 +1,4 @@
-From 92395b33d6351a12d610d09e1744cd4ace8e68cd Mon Sep 17 00:00:00 2001
+From 8f25888167a996616f1609b5e45b6175676e7e26 Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Mon, 18 Jul 2022 17:48:52 +0100
 Subject: [PATCH] Set CMAKE_BUILD_TYPE
@@ -8,7 +8,7 @@ Subject: [PATCH] Set CMAKE_BUILD_TYPE
  1 file changed, 5 insertions(+)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 9b68806..ab7fef9 100644
+index 92be7fa..4056d30 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -32,6 +32,11 @@ ENDIF()
