@@ -1,0 +1,27 @@
+From b27f10391f32447e223aebca3332e71d031a5d36 Mon Sep 17 00:00:00 2001
+From: Wolfgang Merkt <w.merkt@gmail.com>
+Date: Sat, 13 Aug 2022 13:46:54 +0100
+Subject: [PATCH 4/4] Patch for PYTHON_STANDARD_LAYOUT
+
+---
+ CMakeLists.txt | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 295dd69..d05d617 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -61,10 +61,6 @@ include("${JRL_CMAKE_MODULES}/base.cmake")
+ compute_project_args(PROJECT_ARGS LANGUAGES CXX)
+ project(${PROJECT_NAME} ${PROJECT_ARGS})
+ 
+-# Required for ROS2
+-set(PYTHON_DEB_LAYOUT OFF)
+-set(PYTHON_STANDARD_LAYOUT ON)
+-
+ include("${JRL_CMAKE_MODULES}/boost.cmake")
+ include("${JRL_CMAKE_MODULES}/python.cmake")
+ include("${JRL_CMAKE_MODULES}/ide.cmake")
+-- 
+2.25.1
+

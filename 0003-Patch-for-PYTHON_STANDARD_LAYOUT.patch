@@ -1,7 +1,7 @@
 From a6f9644c37360deda74f65d03ac3fa8d79c08088 Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Sat, 13 Aug 2022 13:45:02 +0100
-Subject: [PATCH 3/3] Patch for PYTHON_STANDARD_LAYOUT
+Subject: [PATCH 3/4] Patch for PYTHON_STANDARD_LAYOUT
 
 ---
  CMakeLists.txt | 1 +
