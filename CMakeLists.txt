@@ -46,6 +46,7 @@ endif()
 # ----------------------------------------------------
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 option(SUFFIX_SO_VERSION "Suffix library name with its version" OFF)
+option(PYTHON_STANDARD_LAYOUT "Enable standard Python package layout" ON)
 
 if(DEFINED BUILD_UNIT_TESTS)
   message(
