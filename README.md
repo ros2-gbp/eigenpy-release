@@ -1,3 +1,26 @@
+## eigenpy (galactic) - 2.7.11-2
+
+The packages in the `eigenpy` repository were released into the `galactic` distro by running `/usr/bin/bloom-release -r galactic eigenpy` on `Sat, 13 Aug 2022 12:48:03 -0000`
+
+The `eigenpy` package was released.
+
+Version of package(s) in repository `eigenpy`:
+
+- upstream repository: https://github.com/stack-of-tasks/eigenpy.git
+- release repository: https://github.com/ros2-gbp/eigenpy-release.git
+- rosdistro version: `2.7.10-2`
+- old version: `2.7.11-1`
+- new version: `2.7.11-2`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `0.5.2`
+- rosdep version: `0.22.1`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## eigenpy (humble) - 2.7.10-1
 
 The packages in the `eigenpy` repository were released into the `humble` distro by running `/usr/bin/bloom-release -r humble --non-interactive eigenpy` on `Thu, 28 Jul 2022 11:44:09 -0000`
