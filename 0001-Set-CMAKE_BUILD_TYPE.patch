@@ -1,4 +1,4 @@
-From 6ab4d1bc18ca808f460e9f88f384a86316a7958f Mon Sep 17 00:00:00 2001
+From 1a8825e623801831812787f5a71abe80c9dbad82 Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Mon, 18 Jul 2022 17:55:41 +0100
 Subject: [PATCH 1/2] Set CMAKE_BUILD_TYPE
