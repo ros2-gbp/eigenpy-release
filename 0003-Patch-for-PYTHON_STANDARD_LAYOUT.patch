@@ -1,4 +1,4 @@
-From 4a24bd18d41e4e0d85b044187ef12941f7b9962d Mon Sep 17 00:00:00 2001
+From 55367e4c1184d7c8a5a70abd882d77136b6ff5af Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Sat, 13 Aug 2022 14:08:18 +0100
 Subject: [PATCH 3/3] Patch for PYTHON_STANDARD_LAYOUT
