@@ -1,4 +1,4 @@
-From b60b2589f708a47b8c5c8b093d14070537def99d Mon Sep 17 00:00:00 2001
+From 33a9c3c9740b32063cb132735b2e88e446dda63b Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Sat, 13 Aug 2022 13:45:02 +0100
 Subject: [PATCH 3/4] Patch for PYTHON_STANDARD_LAYOUT
@@ -8,7 +8,7 @@ Subject: [PATCH 3/4] Patch for PYTHON_STANDARD_LAYOUT
  1 file changed, 1 insertion(+)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a5e23ce..295dd69 100644
+index f5fa7e8..b7dc1fc 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -46,6 +46,7 @@ endif()
