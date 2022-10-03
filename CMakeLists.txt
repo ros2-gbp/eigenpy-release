@@ -60,9 +60,9 @@ set(CXX_DISABLE_WERROR True)
 set(CMAKE_VERBOSE_MAKEFILE True)
 
 # Patches
-if(NOT DEFINED CMAKE_BUILD_TYPE)
+#if(NOT DEFINED CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
-endif()
+#endif()
 
 # ----------------------------------------------------
 # --- OPTIONS  ---------------------------------------
