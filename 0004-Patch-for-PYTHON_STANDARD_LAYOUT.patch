@@ -1,4 +1,4 @@
-From 652fa1de4fd401df31887064ee1c1e4f1cc559aa Mon Sep 17 00:00:00 2001
+From 9ea5950f9832865516e71dfbbb56e0d6db9e935f Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Sat, 13 Aug 2022 13:46:54 +0100
 Subject: [PATCH 4/4] Patch for PYTHON_STANDARD_LAYOUT
@@ -8,7 +8,7 @@ Subject: [PATCH 4/4] Patch for PYTHON_STANDARD_LAYOUT
  1 file changed, 4 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index b37c51d..113770a 100644
+index 93a33b2..e157ff0 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -61,10 +61,6 @@ include("${JRL_CMAKE_MODULES}/base.cmake")
