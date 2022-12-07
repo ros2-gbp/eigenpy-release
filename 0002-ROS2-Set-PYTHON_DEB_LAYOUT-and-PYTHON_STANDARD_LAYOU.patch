@@ -1,4 +1,4 @@
-From b4414e8426e1b7d8dc517070e4e5173aef3a1522 Mon Sep 17 00:00:00 2001
+From 61d46f180375ef5ba72a0eea7a0b72a17d67bba8 Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Tue, 2 Aug 2022 14:37:24 +0100
 Subject: [PATCH 2/3] ROS2: Set PYTHON_DEB_LAYOUT and PYTHON_STANDARD_LAYOUT
@@ -8,7 +8,7 @@ Subject: [PATCH 2/3] ROS2: Set PYTHON_DEB_LAYOUT and PYTHON_STANDARD_LAYOUT
  1 file changed, 4 insertions(+)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index c502852..25fa659 100644
+index d750cc1..996cd47 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -60,6 +60,10 @@ include("${JRL_CMAKE_MODULES}/base.cmake")
