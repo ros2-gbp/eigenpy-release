@@ -35,18 +35,12 @@ endif()
 set(CXX_DISABLE_WERROR True)
 set(CMAKE_VERBOSE_MAKEFILE True)
 
-# Patches
-#if(NOT DEFINED CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
-#endif()
-
 # ----------------------------------------------------
 # --- OPTIONS  ---------------------------------------
 # Need to be set before including base.cmake
 # ----------------------------------------------------
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 option(SUFFIX_SO_VERSION "Suffix library name with its version" OFF)
-option(PYTHON_STANDARD_LAYOUT "Enable standard Python package layout" ON)
 
 if(DEFINED BUILD_UNIT_TESTS)
   message(
@@ -87,6 +81,10 @@ else()
 endif()
 set(PYTHON_EXPORT_DEPENDENCY ON)
 findpython(REQUIRED)
+
+if(${NUMPY_VERSION} VERSION_LESS "1.16.0")
+  set(NUMPY_WITH_BROKEN_UFUNC_SUPPORT TRUE)
+endif()
 
 if(WIN32)
   link_directories(${PYTHON_LIBRARY_DIRS})
