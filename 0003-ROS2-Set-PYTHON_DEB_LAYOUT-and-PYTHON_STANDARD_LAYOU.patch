@@ -1,0 +1,35 @@
+From 6864c957483b59077e2313785baba980fe87f04d Mon Sep 17 00:00:00 2001
+From: Wolfgang Merkt <w.merkt@gmail.com>
+Date: Tue, 2 Aug 2022 23:24:28 +0100
+Subject: [PATCH 3/4] ROS2: Set PYTHON_DEB_LAYOUT and PYTHON_STANDARD_LAYOUT
+
+---
+ CMakeLists.txt | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3af597e..24e757d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -46,6 +46,7 @@ endif()
+ # ----------------------------------------------------
+ option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
+ option(SUFFIX_SO_VERSION "Suffix library name with its version" OFF)
++option(PYTHON_STANDARD_LAYOUT "Enable standard Python package layout" ON)
+ 
+ if(DEFINED BUILD_UNIT_TESTS)
+   message(
+@@ -60,10 +61,6 @@ include("${JRL_CMAKE_MODULES}/base.cmake")
+ compute_project_args(PROJECT_ARGS LANGUAGES CXX)
+ project(${PROJECT_NAME} ${PROJECT_ARGS})
+ 
+-# Required for ROS2
+-set(PYTHON_DEB_LAYOUT OFF)
+-set(PYTHON_STANDARD_LAYOUT ON)
+-
+ include("${JRL_CMAKE_MODULES}/boost.cmake")
+ include("${JRL_CMAKE_MODULES}/python.cmake")
+ include("${JRL_CMAKE_MODULES}/ide.cmake")
+-- 
+2.39.2
+
