@@ -1,4 +1,4 @@
-From dbae6684b511807fdb631a7693aadbcac0ecaa77 Mon Sep 17 00:00:00 2001
+From a9ea41cf47f2aa9d9941428066e324d90bdfa0bc Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Mon, 3 Oct 2022 20:25:28 +0100
 Subject: [PATCH 4/4] Force-set CMAKE_BUILD_TYPE to Release
@@ -24,5 +24,5 @@ index 24e757d..1101c1c 100644
  # ----------------------------------------------------
  # --- OPTIONS  ---------------------------------------
 -- 
-2.39.2
+2.34.1
 

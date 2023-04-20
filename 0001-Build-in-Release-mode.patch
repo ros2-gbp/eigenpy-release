@@ -1,4 +1,4 @@
-From d8dd4ece2c03fefa3ea1b917c2b6c4b71495a0a6 Mon Sep 17 00:00:00 2001
+From fa17e73178df4769a350af97dc6e3821f23d005e Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Mon, 18 Jul 2022 13:14:51 +0100
 Subject: [PATCH 1/4] Build in Release mode
@@ -24,5 +24,5 @@ index b4b12e3..98bbb4f 100644
  # --- OPTIONS  ---------------------------------------
  # Need to be set before including base.cmake
 -- 
-2.39.2
+2.34.1
 
