@@ -2,7 +2,7 @@
 # Copyright (c) 2014-2019 CNRS Copyright (c) 2018-2023 INRIA
 #
 
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10)
 
 set(PROJECT_NAME eigenpy)
 set(PROJECT_DESCRIPTION "Bindings between Numpy and Eigen using Boost.Python")
@@ -35,18 +35,12 @@ endif()
 set(CXX_DISABLE_WERROR True)
 set(CMAKE_VERBOSE_MAKEFILE True)
 
-# Patches
-if(NOT DEFINED CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
-endif()
-
 # ----------------------------------------------------
 # --- OPTIONS  ---------------------------------------
 # Need to be set before including base.cmake
 # ----------------------------------------------------
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 option(SUFFIX_SO_VERSION "Suffix library name with its version" OFF)
-option(PYTHON_STANDARD_LAYOUT "Enable standard Python package layout" ON)
 
 if(DEFINED BUILD_UNIT_TESTS)
   message(
@@ -73,6 +67,7 @@ string(REPLACE "-pedantic" "" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 
 # If needed, fix CMake policy for APPLE systems
 apply_default_apple_configuration()
+check_minimal_cxx_standard(11 ENFORCE)
 
 if(WIN32)
   set(LINK copy_if_different)
@@ -161,6 +156,7 @@ set(${PROJECT_NAME}_HEADERS
     include/eigenpy/numpy-allocator.hpp
     include/eigenpy/numpy-type.hpp
     include/eigenpy/registration.hpp
+    include/eigenpy/registration_class.hpp
     include/eigenpy/angle-axis.hpp
     include/eigenpy/quaternion.hpp
     include/eigenpy/user-type.hpp
@@ -168,8 +164,10 @@ set(${PROJECT_NAME}_HEADERS
     include/eigenpy/register.hpp
     include/eigenpy/std-map.hpp
     include/eigenpy/std-vector.hpp
+    include/eigenpy/optional.hpp
     include/eigenpy/pickle-vector.hpp
     include/eigenpy/stride.hpp
+    include/eigenpy/tensor/eigen-from-python.hpp
     include/eigenpy/swig.hpp
     include/eigenpy/version.hpp)
 
@@ -210,6 +208,7 @@ set(${PROJECT_NAME}_SOURCES
     src/quaternion.cpp
     src/geometry-conversion.cpp
     src/std-vector.cpp
+    src/optional.cpp
     src/version.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_SOURCES}
@@ -244,11 +243,11 @@ endif(SUFFIX_SO_VERSION)
 
 if(NOT WIN32)
   target_compile_options(
-    ${PROJECT_NAME} PRIVATE $<$<CXX_COMPILER_ID:MSVC>:-bigobj>
+    ${PROJECT_NAME} PRIVATE $<$<CXX_COMPILER_ID:MSVC>:-bigobj -MP>
                             "-Wno-conversion")
 else()
   target_compile_options(${PROJECT_NAME}
-                         PRIVATE $<$<CXX_COMPILER_ID:MSVC>:-bigobj>)
+                         PRIVATE $<$<CXX_COMPILER_ID:MSVC>:-bigobj -MP>)
   target_compile_definitions(${PROJECT_NAME} PUBLIC "HAVE_SNPRINTF")
 endif()
 
