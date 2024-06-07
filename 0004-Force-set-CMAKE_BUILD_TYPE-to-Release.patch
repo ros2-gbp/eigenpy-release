@@ -1,4 +1,4 @@
-From 1a201e67b5ffc9822f3ac825cd77def2edb82449 Mon Sep 17 00:00:00 2001
+From 68ff92df91b5c91f34a3e1d608137cb5f3711f3f Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Mon, 3 Oct 2022 20:25:28 +0100
 Subject: [PATCH 4/4] Force-set CMAKE_BUILD_TYPE to Release
@@ -8,7 +8,7 @@ Subject: [PATCH 4/4] Force-set CMAKE_BUILD_TYPE to Release
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 24e757d..1101c1c 100644
+index 0818e45..08579d5 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -36,9 +36,9 @@ set(CXX_DISABLE_WERROR True)
@@ -24,5 +24,5 @@ index 24e757d..1101c1c 100644
  # ----------------------------------------------------
  # --- OPTIONS  ---------------------------------------
 -- 
-2.43.0
+2.25.1
 
