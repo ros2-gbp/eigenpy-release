@@ -55,11 +55,6 @@ endfunction()
 set(CXX_DISABLE_WERROR True)
 set(CMAKE_VERBOSE_MAKEFILE True)
 
-# Patches
-if(NOT DEFINED CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
-endif()
-
 # ----------------------------------------------------
 # --- OPTIONS  ---------------------------------------
 # Need to be set before including base.cmake
@@ -68,7 +63,6 @@ option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 option(SUFFIX_SO_VERSION "Suffix library name with its version" OFF)
 option(BUILD_TESTING_SCIPY
        "Build the SciPy tests (scipy should be installed on the machine)" ON)
-option(PYTHON_STANDARD_LAYOUT "Enable standard Python package layout" ON)
 
 include("${JRL_CMAKE_MODULES}/base.cmake")
 compute_project_args(PROJECT_ARGS LANGUAGES CXX)
@@ -216,6 +210,11 @@ set(${PROJECT_NAME}_DECOMPOSITIONS_HEADERS
     include/eigenpy/decompositions/PermutationMatrix.hpp
     include/eigenpy/decompositions/LDLT.hpp
     include/eigenpy/decompositions/LLT.hpp
+    include/eigenpy/decompositions/QR.hpp
+    include/eigenpy/decompositions/HouseholderQR.hpp
+    include/eigenpy/decompositions/ColPivHouseholderQR.hpp
+    include/eigenpy/decompositions/CompleteOrthogonalDecomposition.hpp
+    include/eigenpy/decompositions/FullPivHouseholderQR.hpp
     include/eigenpy/decompositions/SelfAdjointEigenSolver.hpp
     include/eigenpy/decompositions/minres.hpp)
 
@@ -238,6 +237,7 @@ set(${PROJECT_NAME}_HEADERS
     include/eigenpy/eigen-to-python.hpp
     include/eigenpy/eigen-from-python.hpp
     include/eigenpy/eigen-typedef.hpp
+    include/eigenpy/id.hpp
     include/eigenpy/numpy-map.hpp
     include/eigenpy/geometry.hpp
     include/eigenpy/geometry-conversion.hpp
@@ -287,6 +287,7 @@ set(${PROJECT_NAME}_DECOMPOSITIONS_SOURCES
     src/decompositions/llt-solver.cpp
     src/decompositions/ldlt-solver.cpp
     src/decompositions/minres-solver.cpp
+    src/decompositions/qr-solvers.cpp
     src/decompositions/eigen-solver.cpp
     src/decompositions/self-adjoint-eigen-solver.cpp
     src/decompositions/permutation-matrix.cpp
