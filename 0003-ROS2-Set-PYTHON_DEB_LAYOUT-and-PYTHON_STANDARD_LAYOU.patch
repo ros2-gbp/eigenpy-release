@@ -1,25 +1,32 @@
-From 73af9a5217ef0848faed7ac37b1b06c89dbd52b1 Mon Sep 17 00:00:00 2001
+From 1c5136e879f0f68592f0296226e6388d769b4ced Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Tue, 2 Aug 2022 23:24:28 +0100
 Subject: [PATCH 3/4] ROS2: Set PYTHON_DEB_LAYOUT and PYTHON_STANDARD_LAYOUT
 
 ---
- CMakeLists.txt | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ CMakeLists.txt | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index d3c97c6..0818e45 100644
+index 5034a31..6dfbe45 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -46,6 +46,7 @@ endif()
- # ----------------------------------------------------
- option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
+@@ -68,15 +68,21 @@ option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
  option(SUFFIX_SO_VERSION "Suffix library name with its version" OFF)
+ option(BUILD_TESTING_SCIPY
+        "Build the SciPy tests (scipy should be installed on the machine)" ON)
 +option(PYTHON_STANDARD_LAYOUT "Enable standard Python package layout" ON)
++
++if(DEFINED BUILD_UNIT_TESTS)
++  message(
++    AUTHOR_WARNING
++      "BUILD_UNIT_TESTS is deprecated. Use BUILD_TESTING instead.\
++    If you are manually building EigenPy from source in an existing build folder,\
++    we suggest that you delete your build folder and make a new one.")
++  set(BUILD_TESTING ${BUILD_UNIT_TESTS})
++endif(DEFINED BUILD_UNIT_TESTS)
  
- if(DEFINED BUILD_UNIT_TESTS)
-   message(
-@@ -60,10 +61,6 @@ include("${JRL_CMAKE_MODULES}/base.cmake")
+ include("${JRL_CMAKE_MODULES}/base.cmake")
  compute_project_args(PROJECT_ARGS LANGUAGES CXX)
  project(${PROJECT_NAME} ${PROJECT_ARGS})
  

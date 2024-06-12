@@ -1,4 +1,4 @@
-From d55d1e30acb070b627b041d218358117de9b5d4c Mon Sep 17 00:00:00 2001
+From 7e77fb44162775ee54e2e4ca341daa18c54900d0 Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Mon, 18 Jul 2022 13:14:51 +0100
 Subject: [PATCH 1/4] Build in Release mode
@@ -8,10 +8,10 @@ Subject: [PATCH 1/4] Build in Release mode
  1 file changed, 5 insertions(+)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 96a8099..bda75e3 100644
+index bcc8f98..e0a1357 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -35,6 +35,11 @@ endif()
+@@ -55,6 +55,11 @@ endfunction()
  set(CXX_DISABLE_WERROR True)
  set(CMAKE_VERBOSE_MAKEFILE True)
  
