@@ -1,4 +1,4 @@
-From 1c5136e879f0f68592f0296226e6388d769b4ced Mon Sep 17 00:00:00 2001
+From eabc3de128a962dbe6700dd0d549bced389985c6 Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Tue, 2 Aug 2022 23:24:28 +0100
 Subject: [PATCH 3/4] ROS2: Set PYTHON_DEB_LAYOUT and PYTHON_STANDARD_LAYOUT
@@ -8,7 +8,7 @@ Subject: [PATCH 3/4] ROS2: Set PYTHON_DEB_LAYOUT and PYTHON_STANDARD_LAYOUT
  1 file changed, 10 insertions(+), 4 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 5034a31..6dfbe45 100644
+index 21f73e5..3f806bf 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -68,15 +68,21 @@ option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
