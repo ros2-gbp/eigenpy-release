@@ -1,4 +1,4 @@
-From 40b43d40f6389f356ecfa406c873464ca8e5247a Mon Sep 17 00:00:00 2001
+From 07d3d830d1c59813254a2f48a6756193d3ce9a45 Mon Sep 17 00:00:00 2001
 From: Wolfgang Merkt <w.merkt@gmail.com>
 Date: Fri, 7 Jun 2024 16:18:31 +0100
 Subject: [PATCH 3/3] Re-add patch
@@ -8,7 +8,7 @@ Subject: [PATCH 3/3] Re-add patch
  1 file changed, 1 insertion(+), 4 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 5034a31..b9e762c 100644
+index 21f73e5..08f8d31 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -68,15 +68,12 @@ option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
