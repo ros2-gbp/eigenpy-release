@@ -35,6 +35,7 @@ endfunction()
 
 add_dependencies(build_tests ${PYWRAP})
 add_lib_unit_test(matrix)
+add_lib_unit_test(type_info)
 add_lib_unit_test(multiple_registration)
 if(BUILD_TESTING_SCIPY)
   find_scipy()
@@ -56,6 +57,7 @@ endif()
 add_lib_unit_test(std_vector)
 add_lib_unit_test(std_array)
 add_lib_unit_test(std_pair)
+add_lib_unit_test(std_map)
 add_lib_unit_test(user_struct)
 
 if(CMAKE_CXX_STANDARD GREATER 14 AND CMAKE_CXX_STANDARD LESS 98)
@@ -110,6 +112,7 @@ endif()
 add_lib_unit_test(bind_virtual_factory)
 
 add_python_lib_unit_test("py-matrix" "unittest/python/test_matrix.py")
+add_python_lib_unit_test("py-type-info" "unittest/python/test_type_info.py")
 add_python_lib_unit_test("py-multiple-registration"
                          "unittest/python/test_multiple_registration.py")
 
@@ -154,6 +157,8 @@ add_python_eigenpy_lib_unit_test("py-std-vector"
                                  "unittest/python/test_std_vector.py")
 
 add_python_lib_unit_test("py-std-array" "unittest/python/test_std_array.py")
+
+add_python_lib_unit_test("py-std-map" "unittest/python/test_std_map.py")
 
 add_python_lib_unit_test("py-std-pair" "unittest/python/test_std_pair.py")
 
