@@ -59,11 +59,6 @@ endfunction()
 set(CXX_DISABLE_WERROR True)
 set(CMAKE_VERBOSE_MAKEFILE True)
 
-# Patches
-if(NOT DEFINED CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
-endif()
-
 # ----------------------------------------------------
 # --- OPTIONS  ---------------------------------------
 # Need to be set before including base.cmake
@@ -72,12 +67,27 @@ option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 option(SUFFIX_SO_VERSION "Suffix library name with its version" OFF)
 option(BUILD_TESTING_SCIPY
        "Build the SciPy tests (scipy should be installed on the machine)" ON)
-option(PYTHON_STANDARD_LAYOUT "Enable standard Python package layout" ON)
+
+# ----------------------------------------------------
+# --- Policy -----------------------------------------
+# CMake Policy setup
+# ----------------------------------------------------
+# Policy can be removed when cmake_minimum_required is updated.
+
+# We also set CMAKE_POLICY_DEFAULT_CMPXXXX because CMake modules can reset
+# policy and redefine some macros like `find_dependency` that will not use our
+# policy.
 
 # Use BoostConfig module distributed by boost library instead of using FindBoost
-# module distributed by CMake
+# module distributed by CMake (to remove in 3.30).
 if(POLICY CMP0167)
   cmake_policy(SET CMP0167 NEW)
+  set(CMAKE_POLICY_DEFAULT_CMP0167 NEW)
+endif()
+# install() DESTINATION paths are normalized (to remove in 3.31).
+if(POLICY CMP0177)
+  cmake_policy(SET CMP0177 NEW)
+  set(CMAKE_POLICY_DEFAULT_CMP0177 NEW)
 endif()
 include("${JRL_CMAKE_MODULES}/base.cmake")
 compute_project_args(PROJECT_ARGS LANGUAGES CXX)
@@ -176,9 +186,12 @@ endif(BUILD_WITH_ACCELERATE_SUPPORT)
 # --- INCLUDE ----------------------------------------
 # ----------------------------------------------------
 set(${PROJECT_NAME}_UTILS_HEADERS
-    include/eigenpy/utils/scalar-name.hpp include/eigenpy/utils/is-approx.hpp
-    include/eigenpy/utils/is-aligned.hpp include/eigenpy/utils/traits.hpp
-    include/eigenpy/utils/python-compat.hpp)
+    include/eigenpy/utils/scalar-name.hpp
+    include/eigenpy/utils/is-approx.hpp
+    include/eigenpy/utils/is-aligned.hpp
+    include/eigenpy/utils/traits.hpp
+    include/eigenpy/utils/python-compat.hpp
+    include/eigenpy/utils/empty-visitor.hpp)
 
 set(${PROJECT_NAME}_SOLVERS_HEADERS
     include/eigenpy/solvers/solvers.hpp
@@ -256,6 +269,7 @@ set(${PROJECT_NAME}_HEADERS
     include/eigenpy/numpy-map.hpp
     include/eigenpy/geometry.hpp
     include/eigenpy/geometry-conversion.hpp
+    include/eigenpy/map.hpp
     include/eigenpy/memory.hpp
     include/eigenpy/numpy.hpp
     include/eigenpy/numpy-allocator.hpp
@@ -281,6 +295,7 @@ set(${PROJECT_NAME}_HEADERS
     include/eigenpy/variant.hpp
     include/eigenpy/std-unique-ptr.hpp
     include/eigenpy/swig.hpp
+    include/eigenpy/type_info.hpp
     include/eigenpy/version.hpp)
 
 list(
@@ -355,6 +370,7 @@ set(${PROJECT_NAME}_SOURCES
     src/scipy-type.cpp
     src/std-vector.cpp
     src/optional.cpp
+    src/type_info.cpp
     src/version.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_SOURCES}
@@ -429,29 +445,6 @@ add_source_group(${PROJECT_NAME}_SOURCES)
 
 # Install package for ROS
 install(FILES package.xml DESTINATION share/eigenpy)
-# Allows Colcon to find non-Ament packages when using workspace underlays
-file(
-  WRITE
-  ${CMAKE_CURRENT_BINARY_DIR}/share/ament_index/resource_index/packages/${PROJECT_NAME}
-  "")
-install(
-  FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/share/ament_index/resource_index/packages/${PROJECT_NAME}
-  DESTINATION share/ament_index/resource_index/packages)
-file(
-  WRITE
-  ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/hook/ament_prefix_path.dsv
-  "prepend-non-duplicate;AMENT_PREFIX_PATH;")
-install(
-  FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/hook/ament_prefix_path.dsv
-  DESTINATION share/${PROJECT_NAME}/hook)
-file(WRITE
-     ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/hook/python_path.dsv
-     "prepend-non-duplicate;PYTHONPATH;${PYTHON_SITELIB}")
-install(
-  FILES ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/hook/python_path.dsv
-  DESTINATION share/${PROJECT_NAME}/hook)
 
 # ----------------------------------------------------
 # --- PYTHON LIBRARY ---------------------------------
