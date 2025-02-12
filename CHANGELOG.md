@@ -6,6 +6,66 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [3.10.3] - 2025-02-11
+
+### Added
+- Add `BUILDING_ROS2_PACKAGE` to generate ament specific file ([#530](https://github.com/stack-of-tasks/eigenpy/pull/530))
+
+### Changed
+- Modernize doxygen documentation ([#533](https://github.com/stack-of-tasks/eigenpy/pull/533))
+
+## [3.10.2] - 2025-01-13
+
+### Fixed
+
+- Fix Python library linkage for Debug build on Windows ([#514](https://github.com/stack-of-tasks/eigenpy/pull/514))
+- Fix np.ones when dtype is a custom user type ([#525](https://github.com/stack-of-tasks/eigenpy/pull/525))
+
+## [3.10.1] - 2024-10-30
+
+### Added
+
+- Add Pixi support ([#444](https://github.com/stack-of-tasks/eigenpy/pull/444))
+
+### Fixed
+
+- Don't use C++14 feature ([#510](https://github.com/stack-of-tasks/eigenpy/pull/510))
+- Add inline to `deprecationTypeToPyObj` definition to avoid linking error ([#512](https://github.com/stack-of-tasks/eigenpy/pull/512))
+
+## [3.10.0] - 2024-09-26
+
+### Added
+
+- `GenericMapPythonVisitor`/`StdMapPythonVisitor` can now take an extra visitor argument in the `expose()` method, similar to `StdVectorPythonVisitor`
+
+### Changed
+
+- Move `GenericMapPythonVisitor` to its own header `eigenpy/map.hpp`
+- Rename `overload_base_get_item_for_std_map` to `overload_base_get_item_for_map`, move out of `eigenpy::details` namespace
+- Move `EmptyPythonVisitor` to new header `eigenpy/utils/empty-visitor.hpp`
+
+## [3.9.1] - 2024-09-19
+
+### Added
+
+- Add test returning reference of std::pair ([#503](https://github.com/stack-of-tasks/eigenpy/pull/503))
+- Add more general visitor `GenericMapPythonVisitor` for map types test `boost::unordered_map<std::string, int>` ([#504](https://github.com/stack-of-tasks/eigenpy/pull/504))
+- Support for non-[default-contructible](https://en.cppreference.com/w/cpp/named_req/DefaultConstructible) types in map types ([#504](https://github.com/stack-of-tasks/eigenpy/pull/504))
+- Add type_info helpers ([#502](https://github.com/stack-of-tasks/eigenpy/pull/502))
+- Add NumPy 2 support ([#496](https://github.com/stack-of-tasks/eigenpy/pull/496))
+
+### Changed
+
+- Move `StdMapPythonVisitor` out of `eigenpy::python` namespace, which was a mistake ([#504](https://github.com/stack-of-tasks/eigenpy/pull/504))
+
+## [3.9.0] - 2024-08-31
+
+### Changed
+- The `exposeStdVectorEigenSpecificType()` template function now takes the vector allocator as a template parameter ([#500](https://github.com/stack-of-tasks/eigenpy/pull/500))
+
+### Added
+- Add bp::dist to std::map converter ([#499](https://github.com/stack-of-tasks/eigenpy/pull/499))
+
 ## [3.8.2] - 2024-08-26
 
 ### Fixed
@@ -664,7 +724,13 @@ One can now easily expose C++ struct containing Eigen objects in Python avoiding
 
 ## [1.0.0] - 2014-07-18
 
-[Unreleased]: https://github.com/stack-of-tasks/eigenpy/compare/v3.8.2...HEAD
+[Unreleased]: https://github.com/stack-of-tasks/eigenpy/compare/v3.10.3...HEAD
+[3.10.3]: https://github.com/stack-of-tasks/eigenpy/compare/v3.10.2...v3.10.3
+[3.10.2]: https://github.com/stack-of-tasks/eigenpy/compare/v3.10.1...v3.10.2
+[3.10.1]: https://github.com/stack-of-tasks/eigenpy/compare/v3.10.0...v3.10.1
+[3.10.0]: https://github.com/stack-of-tasks/eigenpy/compare/v3.9.1...v3.10.0
+[3.9.1]: https://github.com/stack-of-tasks/eigenpy/compare/v3.9.0...v3.9.1
+[3.9.0]: https://github.com/stack-of-tasks/eigenpy/compare/v3.8.2...v3.9.0
 [3.8.2]: https://github.com/stack-of-tasks/eigenpy/compare/v3.8.1...v3.8.2
 [3.8.1]: https://github.com/stack-of-tasks/eigenpy/compare/v3.8.0...v3.8.1
 [3.8.0]: https://github.com/stack-of-tasks/eigenpy/compare/v3.7.0...v3.8.0
