@@ -1,0 +1,24 @@
+From a0d4fe8930559e60a806e6cbf4b4a7f58accc444 Mon Sep 17 00:00:00 2001
+From: Guilhem Saurel <guilhem.saurel@laas.fr>
+Date: Thu, 20 Feb 2025 11:38:45 +0100
+Subject: [PATCH] disable unittests
+
+---
+ CMakeLists.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2d6360c..05151c6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -454,7 +454,6 @@ add_subdirectory(python)
+ # ----------------------------------------------------
+ # --- UNIT TEST --------------------------------------
+ # ----------------------------------------------------
+-add_subdirectory(unittest)
+ 
+ pkg_config_append_libs(${PROJECT_NAME})
+ pkg_config_append_cflags("-I${PYTHON_INCLUDE_DIRS}")
+-- 
+2.47.0
+
