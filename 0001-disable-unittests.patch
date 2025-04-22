@@ -8,7 +8,7 @@ Subject: [PATCH] disable unittests
  1 file changed, 1 deletion(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 2d6360c..05151c6 100644
+index 2d6360c4fb29..05151c692401 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -454,7 +454,6 @@ add_subdirectory(python)
@@ -20,5 +20,5 @@ index 2d6360c..05151c6 100644
  pkg_config_append_libs(${PROJECT_NAME})
  pkg_config_append_cflags("-I${PYTHON_INCLUDE_DIRS}")
 -- 
-2.47.0
+2.49.0
 
