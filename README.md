@@ -1,3 +1,26 @@
+## eigenpy (humble) - 3.11.0-1
+
+The packages in the `eigenpy` repository were released into the `humble` distro by running `/nix/store/fzk45mxsx3ihl63w4mhvkzhdb4hj8jy1-python3.12-bloom-0.12.0/bin/bloom-release -r humble eigenpy` on `Fri, 25 Apr 2025 14:54:59 -0000`
+
+The `eigenpy` package was released.
+
+Version of package(s) in repository `eigenpy`:
+
+- upstream repository: https://github.com/stack-of-tasks/eigenpy.git
+- release repository: https://github.com/ros2-gbp/eigenpy-release.git
+- rosdistro version: `3.10.3-1`
+- old version: `3.10.3-1`
+- new version: `3.11.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.12.0`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.25.1`
+- rosdistro version: `0.9.1`
+- vcstools version: `0.1.42`
+
+
 ## eigenpy (humble) - 3.10.3-1
 
 The packages in the `eigenpy` repository were released into the `humble` distro by running `/nix/store/vf5ngc0mmfvwi831knnc30wklbl473kb-python3.12-bloom-0.12.0/bin/bloom-release -r humble eigenpy` on `Wed, 12 Feb 2025 13:47:03 -0000`
