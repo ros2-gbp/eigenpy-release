@@ -20,5 +20,5 @@ index 2d6360c..05151c6 100644
  pkg_config_append_libs(${PROJECT_NAME})
  pkg_config_append_cflags("-I${PYTHON_INCLUDE_DIRS}")
 -- 
-2.47.0
+2.49.0
 
