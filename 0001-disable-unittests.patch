@@ -1,4 +1,4 @@
-From a0d4fe8930559e60a806e6cbf4b4a7f58accc444 Mon Sep 17 00:00:00 2001
+From ab22fe65da8d054712c507b5e1f9ff9f5e851a2e Mon Sep 17 00:00:00 2001
 From: Guilhem Saurel <guilhem.saurel@laas.fr>
 Date: Thu, 20 Feb 2025 11:38:45 +0100
 Subject: [PATCH] disable unittests
@@ -8,7 +8,7 @@ Subject: [PATCH] disable unittests
  1 file changed, 1 deletion(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 2d6360c4fb29..05151c692401 100644
+index 2d6360c..05151c6 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -454,7 +454,6 @@ add_subdirectory(python)
