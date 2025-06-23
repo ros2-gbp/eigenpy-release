@@ -1,3 +1,26 @@
+## eigenpy (kilted) - 3.11.0-1
+
+The packages in the `eigenpy` repository were released into the `kilted` distro by running `/nix/store/rrnp44mx5czg1688ynsgf6aibjf0zcq2-python3.12-bloom-0.12.0/bin/bloom-release -r kilted eigenpy` on `Mon, 23 Jun 2025 06:10:17 -0000`
+
+The `eigenpy` package was released.
+
+Version of package(s) in repository `eigenpy`:
+
+- upstream repository: https://github.com/stack-of-tasks/eigenpy.git
+- release repository: https://github.com/ros2-gbp/eigenpy-release.git
+- rosdistro version: `3.10.3-2`
+- old version: `3.10.3-2`
+- new version: `3.11.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.12.0`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.25.1`
+- rosdistro version: `0.9.1`
+- vcstools version: `0.1.42`
+
+
 ## eigenpy (rolling) - 3.11.0-1
 
 The packages in the `eigenpy` repository were released into the `rolling` distro by running `/nix/store/fzk45mxsx3ihl63w4mhvkzhdb4hj8jy1-python3.12-bloom-0.12.0/bin/bloom-release -r rolling eigenpy` on `Fri, 25 Apr 2025 15:26:52 -0000`
