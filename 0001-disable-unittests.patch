@@ -1,4 +1,4 @@
-From ab22fe65da8d054712c507b5e1f9ff9f5e851a2e Mon Sep 17 00:00:00 2001
+From a016262ba317f72fbc7ddfd70712fc5c021fda6e Mon Sep 17 00:00:00 2001
 From: Guilhem Saurel <guilhem.saurel@laas.fr>
 Date: Thu, 20 Feb 2025 11:38:45 +0100
 Subject: [PATCH] disable unittests
@@ -20,5 +20,5 @@ index 2d6360c..05151c6 100644
  pkg_config_append_libs(${PROJECT_NAME})
  pkg_config_append_cflags("-I${PYTHON_INCLUDE_DIRS}")
 -- 
-2.49.0
+2.51.0
 
