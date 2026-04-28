@@ -162,4 +162,5 @@ tracks:
     ros_distro: rolling
     vcs_type: git
     vcs_uri: https://github.com/stack-of-tasks/eigenpy.git
-    version: :{auto}
+    version: 3.12.0
+    version_saved: :{auto}
