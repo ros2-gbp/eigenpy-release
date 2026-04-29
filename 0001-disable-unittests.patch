@@ -1,4 +1,4 @@
-From f63112b070c62b055b6d7aa03e956871f3d768b9 Mon Sep 17 00:00:00 2001
+From 8a45d5cbb7f632e51e10730d6cbdc36b448a17e9 Mon Sep 17 00:00:00 2001
 From: Guilhem Saurel <guilhem.saurel@laas.fr>
 Date: Thu, 20 Feb 2025 11:38:45 +0100
 Subject: [PATCH] disable unittests
@@ -8,7 +8,7 @@ Subject: [PATCH] disable unittests
  1 file changed, 1 deletion(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index e767907c8d33..f661159f4a3c 100644
+index e767907..f661159 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -484,7 +484,6 @@ add_subdirectory(python)
@@ -20,5 +20,5 @@ index e767907c8d33..f661159f4a3c 100644
  pkg_config_append_libs(${PROJECT_NAME})
  pkg_config_append_cflags("-I${PYTHON_INCLUDE_DIRS}")
 -- 
-2.53.0
+2.54.0.545.g6539524ca2-goog
 
