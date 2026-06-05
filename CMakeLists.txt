@@ -209,8 +209,7 @@ set(${PROJECT_NAME}_DECOMPOSITIONS_SPARSE_CHOLMOD_HEADERS
     include/eigenpy/decompositions/sparse/cholmod/CholmodSupernodalLLT.hpp)
 
 set(${PROJECT_NAME}_DECOMPOSITIONS_SPARSE_ACCELERATE_HEADERS
-    include/eigenpy/decompositions/sparse/accelerate/Accelerate.hpp
-    include/eigenpy/decompositions/sparse/accelerate/accelerate.hpp)
+    include/eigenpy/decompositions/sparse/accelerate/Accelerate.hpp)
 
 set(${PROJECT_NAME}_DECOMPOSITIONS_SPARSE_HEADERS
     include/eigenpy/decompositions/sparse/SimplicialLLT.hpp
@@ -484,6 +483,7 @@ add_subdirectory(python)
 # ----------------------------------------------------
 # --- UNIT TEST --------------------------------------
 # ----------------------------------------------------
+add_subdirectory(unittest)
 
 pkg_config_append_libs(${PROJECT_NAME})
 pkg_config_append_cflags("-I${PYTHON_INCLUDE_DIRS}")
