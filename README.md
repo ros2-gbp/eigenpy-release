@@ -1,3 +1,26 @@
+## eigenpy (lyrical) - 3.13.0-1
+
+The packages in the `eigenpy` repository were released into the `lyrical` distro by running `/nix/store/yr02v08v8dzvm5cbhvlbag590psbayxw-python3.13-bloom-0.14.3/bin/bloom-release -r lyrical eigenpy` on `Fri, 05 Jun 2026 15:35:09 -0000`
+
+The `eigenpy` package was released.
+
+Version of package(s) in repository `eigenpy`:
+
+- upstream repository: https://github.com/stack-of-tasks/eigenpy.git
+- release repository: https://github.com/ros2-gbp/eigenpy-release.git
+- rosdistro version: `3.12.0-3`
+- old version: `3.12.0-3`
+- new version: `3.13.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.25.1`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## eigenpy (rolling) - 3.13.0-1
 
 The packages in the `eigenpy` repository were released into the `rolling` distro by running `/nix/store/yr02v08v8dzvm5cbhvlbag590psbayxw-python3.13-bloom-0.14.3/bin/bloom-release -r rolling eigenpy` on `Fri, 05 Jun 2026 15:33:39 -0000`
